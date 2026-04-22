@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Group Chat</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #0f172a;
+    color: white;
+}
+
+#login, #chat {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    margin: 5px;
+    width: 200px;
+}
+
+button {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: #22c55e;
+    color: white;
+}
+
+#messages {
+    flex: 1;
+    width: 100%;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.msg {
+    background: #1e293b;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.username {
+    color: #38bdf8;
+    font-weight: bold;
+}
+
+#inputArea {
+    display: flex;
+    width: 100%;
+}
+
+#inputArea input {
+    flex: 1;
+}
+</style>
+</head>
+
+<body>
+
+<div id="login">
+    <h2>Enter Username</h2>
+    <input id="username">
+    <button onclick="join()">Join</button>
+</div>
+
+<div id="chat" style="display:none;">
+    <div id="messages"></div>
+    <div id="inputArea">
+        <input id="msg" placeholder="Type message...">
+        <button onclick="send()">Send</button>
+    </div>
+</div>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js"></script>
+
+<script>
+// 🔥 PASTE YOUR FIREBASE CONFIG HERE
+const firebaseConfig = {
+  apiKey: "YOUR_KEY",
+  authDomain: "YOUR_PROJECT",
+  databaseURL: "YOUR_DB_URL",
+  projectId: "YOUR_ID"
+};
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+
+let username = "";
+
+function join() {
+    username = document.getElementById("username").value;
+    if (!username) return;
+
+    document.getElementById("login").style.display = "none";
+    document.getElementById("chat").style.display = "flex";
+}
+
+function send() {
+    let msg = document.getElementById("msg").value;
+    if (!msg) return;
+
+    db.ref("messages").push({
+        user: username,
+        text: msg
+    });
+
+    document.getElementById("msg").value = "";
+}
+
+// Real-time listener
+db.ref("messages").on("child_added", snapshot => {
+    const data = snapshot.val();
+
+    const div = document.createElement("div");
+    div.className = "msg";
+    div.innerHTML = `<span class="username">${data.user}</span>: ${data.text}`;
+
+    document.getElementById("messages").appendChild(div);
+    document.getElementById("messages").scrollTop =
+        document.getElementById("messages").scrollHeight;
+});
+</script>
+
+</body>
+</html>
