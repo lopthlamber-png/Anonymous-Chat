@@ -1,137 +1,190 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Group Chat</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz App</title>
 <style>
-body {
-    margin: 0;
-    font-family: Arial;
-    background: #0f172a;
-    color: white;
+body{
+    font-family:Poppins,sans-serif;
+    background:#020617;
+    color:white;
+    padding:20px;
+    text-align:center;
 }
-
-#login, #chat {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
+input, button{
+    padding:10px;
+    margin:10px;
+    border-radius:10px;
+    border:none;
 }
-
-input {
-    padding: 12px;
-    border-radius: 10px;
-    border: none;
-    margin: 5px;
-    width: 200px;
+button{
+    background:#3b82f6;
+    color:white;
+    cursor:pointer;
 }
-
-button {
-    padding: 12px;
-    border-radius: 10px;
-    border: none;
-    background: #22c55e;
-    color: white;
-}
-
-#messages {
-    flex: 1;
-    width: 100%;
-    overflow-y: auto;
-    padding: 10px;
-}
-
-.msg {
-    background: #1e293b;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 5px;
-}
-
-.username {
-    color: #38bdf8;
-    font-weight: bold;
-}
-
-#inputArea {
-    display: flex;
-    width: 100%;
-}
-
-#inputArea input {
-    flex: 1;
+label{
+    display:block;
+    margin:10px 0;
+    padding:10px;
+    background:#1f2937;
+    border-radius:10px;
+    cursor:pointer;
 }
 </style>
 </head>
-
 <body>
 
-<div id="login">
-    <h2>Enter Username</h2>
-    <input id="username">
-    <button onclick="join()">Join</button>
-</div>
-
-<div id="chat" style="display:none;">
-    <div id="messages"></div>
-    <div id="inputArea">
-        <input id="msg" placeholder="Type message...">
-        <button onclick="send()">Send</button>
-    </div>
-</div>
-
-<!-- Firebase -->
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js"></script>
+<div id="app"></div>
 
 <script>
-// 🔥 PASTE YOUR FIREBASE CONFIG HERE
-const firebaseConfig = {
-  apiKey: "YOUR_KEY",
-  authDomain: "YOUR_PROJECT",
-  databaseURL: "YOUR_DB_URL",
-  projectId: "YOUR_ID"
-};
+// ===== SAMPLE QUESTIONS (replace with your JSON) =====
+const questions = [
+{
+    Question: "What is 2 + 2?",
+    Answer: "A",
+    Options: [
+        {Id:"A", Choice:"4"},
+        {Id:"B", Choice:"5"},
+        {Id:"C", Choice:"6"}
+    ]
+},
+{
+    Question: "What is the capital of France?",
+    Answer: "B",
+    Options: [
+        {Id:"A", Choice:"Berlin"},
+        {Id:"B", Choice:"Paris"},
+        {Id:"C", Choice:"Madrid"}
+    ]
+}
+];
 
-firebase.initializeApp(firebaseConfig);
-const db = firebase.database();
+// ===== STATE =====
+let username = localStorage.getItem("username");
+let current = parseInt(localStorage.getItem("current")) || 0;
+let answers = JSON.parse(localStorage.getItem("answers")) || [];
 
-let username = "";
-
-function join() {
-    username = document.getElementById("username").value;
-    if (!username) return;
-
-    document.getElementById("login").style.display = "none";
-    document.getElementById("chat").style.display = "flex";
+// ===== SAVE STATE =====
+function saveState(){
+    localStorage.setItem("username", username);
+    localStorage.setItem("current", current);
+    localStorage.setItem("answers", JSON.stringify(answers));
 }
 
-function send() {
-    let msg = document.getElementById("msg").value;
-    if (!msg) return;
+// ===== USERNAME SCREEN =====
+function showLogin(){
+    document.getElementById("app").innerHTML = `
+        <h2>Welcome to the Quiz!</h2>
+        <input type="text" id="name" placeholder="Enter your name"><br>
+        <button onclick="startQuiz()">Start Quiz</button>
+    `;
+}
 
-    db.ref("messages").push({
-        user: username,
-        text: msg
+function startQuiz(){
+    const nameInput = document.getElementById("name").value;
+    if(nameInput){
+        username = nameInput;
+        current = 0;
+        answers = [];
+        saveState();
+        showQuestion();
+    }
+}
+
+// ===== SHOW QUESTION =====
+function showQuestion(){
+    if(current >= questions.length){
+        finishQuiz();
+        return;
+    }
+
+    const q = questions[current];
+
+    let html = `
+        <h2>Question ${current+1} of ${questions.length}</h2>
+        <h3>${q.Question}</h3>
+        <form id="quizForm">
+    `;
+
+    q.Options.forEach(opt => {
+        const checked = answers[current] === opt.Id ? "checked" : "";
+        html += `
+            <label>
+                <input type="radio" name="answer" value="${opt.Id}" ${checked} required>
+                ${opt.Choice}
+            </label>
+        `;
     });
 
-    document.getElementById("msg").value = "";
+    if(current > 0){
+        html += `<button type="button" onclick="prev()">⬅ Previous</button>`;
+    }
+
+    html += `<button type="submit">${current+1 === questions.length ? "Submit Quiz" : "Next Question"}</button>`;
+    html += `</form>`;
+
+    document.getElementById("app").innerHTML = html;
+
+    document.getElementById("quizForm").onsubmit = function(e){
+        e.preventDefault();
+        const selected = document.querySelector('input[name="answer"]:checked');
+        if(selected){
+            answers[current] = selected.value;
+            current++;
+            saveState();
+            showQuestion();
+        }
+    };
 }
 
-// Real-time listener
-db.ref("messages").on("child_added", snapshot => {
-    const data = snapshot.val();
+// ===== NAVIGATION =====
+function prev(){
+    current--;
+    saveState();
+    showQuestion();
+}
 
-    const div = document.createElement("div");
-    div.className = "msg";
-    div.innerHTML = `<span class="username">${data.user}</span>: ${data.text}`;
+// ===== FINISH =====
+function finishQuiz(){
+    let score = 0;
 
-    document.getElementById("messages").appendChild(div);
-    document.getElementById("messages").scrollTop =
-        document.getElementById("messages").scrollHeight;
-});
+    questions.forEach((q, i) => {
+        if(answers[i] === q.Answer) score++;
+    });
+
+    // Save results locally
+    const result = {
+        name: username,
+        score: score,
+        total: questions.length
+    };
+
+    let allResults = JSON.parse(localStorage.getItem("results")) || [];
+    allResults.push(result);
+    localStorage.setItem("results", JSON.stringify(allResults));
+
+    // Clear session
+    localStorage.removeItem("username");
+    localStorage.removeItem("current");
+    localStorage.removeItem("answers");
+
+    document.getElementById("app").innerHTML = `
+        <h2>Quiz Finished!</h2>
+        <h3>${username}, your score is ${score} / ${questions.length}</h3>
+        <button onclick="restart()">Restart</button>
+    `;
+}
+
+function restart(){
+    location.reload();
+}
+
+// ===== START =====
+if(!username){
+    showLogin();
+}else{
+    showQuestion();
+}
 </script>
 
 </body>
