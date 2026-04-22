@@ -1,22 +1,700 @@
 {
-  "NewPart": [
-    {
-      "Questions": [
+    "Validation": "BongLang Quiz Maker",
+    "Intro": {
+        "Title": "SCIENCE 10",
+        "Welcome": "4TH QUARTER DIVISION UNIFIED SUMMATIVE TEST",
+        "Instruction": "Click the 'Start Quiz' button to proceed"
+    },
+    "Result": {
+        "MessagePassed": "Congratulations. You passed!",
+        "MessageFailed": "I'm so sorry. You failed"
+    },
+    "Settings": {
+        "PasssingRate": 75,
+        "Pool": "Include",
+        "ShowTakerScore": "Yes",
+        "RandomPart": 0,
+        "ShowPassingScore": "Yes",
+        "EnableReview": "No",
+        "LimitTime": "Exam",
+        "TimeLimit": "60",
+        "UpdateScore": "No",
+        "NavigationAllow": "No",
+        "GradeLevel": "Grade 10",
+        "Subject": {
+            "Subject": "Science",
+            "Id": "Select"
+        },
+        "ExamType": "Select",
+        "Quarter": "Quarter 4",
+        "QuestionnaireDisplay": "0",
+        "QDefaultTimeLimit": 50,
+        "MinTime": 30,
+        "AdaptiveTime": 20,
+        "AdaptiveMessage": "You act too early. Please read and understand the question.",
+        "AdaptedVoiceOver": "API",
+        "AdaptiveAudio": "",
+        "OverideQuetionDefaults": true,
+        "SpeakEarlySubmission": true,
+        "ActivatedReadingTime": true,
+        "ShowReadingTimer": true,
+        "Secured": false,
+        "SecurityKey": "",
+        "SecurityEditable": true,
+        "UserSecured": true
+    },
+    "backref": "Intro",
+    "ClickDetails": {
+        "ItemClick": "Welcome"
+    },
+    "NewPart": [
         {
-          "Question": "Sample Question?",
-          "Answer": "A",
-          "Options": [
-            {
-              "Id": "A",
-              "Choice": "Option 1"
-            },
-            {
-              "Id": "B",
-              "Choice": "Option 2"
-            }
-          ]
+            "Part": "Part 1",
+            "Id": "P0001",
+            "PartType": "Multiple Choice",
+            "QuestionPool": "Random",
+            "RandomQuestion": 40,
+            "Navigation": "Submit all at once",
+            "Postpone": "No",
+            "AllowPartialAnswer": "No",
+            "selectPostpone": false,
+            "selectAllowPartial": false,
+            "IsAnswered": "No",
+            "Direction": "Read the Question and select the answer from the given choices.",
+            "Questions": [
+                {
+                    "Id": "00775fc6-77e4-a32e-8a98-714bee872e3d",
+                    "WithSelection": false,
+                    "CompCode": "S10LT-IIa-23",
+                    "Competency": "Classify biomolecules",
+                    "Content": "Carbohydrates",
+                    "Taxonomy": "Remembering",
+                    "QuestionType": "Multiple Choice",
+                    "PartType": "Multiple Choice",
+                    "TimeUp": "No",
+                    "VoiceOver": "None",
+                    "VoiceAudio": "",
+                    "SystemVersion": "30.0.6",
+                    "QuestionContent": {
+                        "type": "doc",
+                        "content": [
+                            {
+                                "type": "paragraph",
+                                "attrs": {
+                                    "style": "font-size:12px;"
+                                },
+                                "content": [
+                                    {
+                                        "type": "text",
+                                        "text": "Glucose belongs to which biomolecule group?"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "Question": "Glucose belongs to which biomolecule group?",
+                    "Answer": "P0001Q0006O0002",
+                    "UserAnswer": "",
+                    "IsAnswered": "No",
+                    "ImageLink": "",
+                    "ImageFile": "",
+                    "Points": 1,
+                    "Penalty": 0,
+                    "RandomOption": "Yes",
+                    "TimeLimit": 0,
+                    "AdaptiveTime": 20,
+                    "ActivatedReadingTime": true,
+                    "SpeakEarlySubmission": true,
+                    "ShowFeedback": "No",
+                    "FeedbackCorrect": "Correct",
+                    "FeedbackIncorrect": "Incorrect",
+                    "Options": [
+                        {
+                            "Id": "P0001Q0006O0001",
+                            "IdUser": "UserP0001Q0006O0001",
+                            "EquationOpt": "",
+                            "Choice": "Lipids",
+                            "ImageLink": "",
+                            "ImageFile": "",
+                            "IsCorrect": false
+                        },
+                        {
+                            "Id": "P0001Q0006O0002",
+                            "IdUser": "UserP0001Q0006O0002",
+                            "EquationOpt": "",
+                            "Choice": "Carbohydrates",
+                            "ImageLink": "",
+                            "ImageFile": "",
+                            "IsCorrect": true
+                        },
+                        {
+                            "Id": "P0001Q0006O0003",
+                            "IdUser": "UserP0001Q0006O0003",
+                            "EquationOpt": "",
+                            "Choice": "Proteins",
+                            "ImageLink": "",
+                            "ImageFile": "",
+                            "IsCorrect": false
+                        },
+                        {
+                            "Id": "P0001Q0006O0004",
+                            "IdUser": "UserP0001Q0006O0004",
+                            "EquationOpt": "",
+                            "Choice": "Vitamins",
+                            "ImageLink": "",
+                            "ImageFile": "",
+                            "IsCorrect": false
+                        }
+                    ],
+                    "QuestionNumber": 6
+                },
+                {
+                    "Id": "b077d1e8-3d67-e354-23a1-ff22bd9c6060",
+                    "WithSelection": false,
+                    "CompCode": "S10LT-IIa-23",
+                    "Competency": "Classify biomolecules from food labels",
+                    "Content": "Nutrients",
+                    "Taxonomy": "Remembering",
+                    "QuestionType": "Multiple Choice",
+                    "PartType": "Multiple Choice",
+                    "TimeUp": "No",
+                    "VoiceOver": "None",
+                    "VoiceAudio": "",
+                    "SystemVersion": "30.0.6",
+                    "QuestionContent": {
+                        "type": "doc",
+                        "content": [
+                            {
+                                "type": "paragraph",
+                                "attrs": {
+                                    "style": "font-size:12px;"
+                                },
+                                "content": [
+                                    {
+                                        "type": "text",
+                                        "text": "Fats on nutrition labels belong to:"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "Question": "Fats on nutrition labels belong to:",
+                    "Answer": "P0001Q0008O0003",
+                    "UserAnswer": "",
+                    "IsAnswered": "No",
+                    "ImageLink": "",
+                    "ImageFile": "",
+                    "Points": 1,
+                    "Penalty": 0,
+                    "RandomOption": "Yes",
+                    "TimeLimit": 0,
+                    "AdaptiveTime": 20,
+                    "ActivatedReadingTime": true,
+                    "SpeakEarlySubmission": true,
+                    "ShowFeedback": "No",
+                    "FeedbackCorrect": "Correct",
+                    "FeedbackIncorrect": "Incorrect",
+                    "Options": [
+                        {
+                            "Id": "P0001Q0008O0001",
+                            "IdUser": "UserP0001Q0008O0001",
+                            "EquationOpt": "",
+                            "Choice": "Proteins",
+                            "ImageLink": "",
+                            "ImageFile": "",
+                            "IsCorrect": false
+                        },
+                        {
+                            "Id": "P0001Q0008O0002",
+                            "IdUser": "UserP0001Q0008O0002",
+                            "EquationOpt": "",
+                            "Choice": "Carbohydrates",
+                            "ImageLink": "",
+                            "ImageFile": "",
+                            "IsCorrect": false
+                        },
+                        {
+                            "Id": "P0001Q0008O0003",
+                            "IdUser": "UserP0001Q0008O0003",
+                            "EquationOpt": "",
+                            "Choice": "Lipids",
+                            "ImageLink": "",
+                            "ImageFile": "",
+                            "IsCorrect": true
+                        },
+                        {
+                            "Id": "P0001Q0008O0004",
+                            "IdUser": "UserP0001Q0008O0004",
+                            "EquationOpt": "",
+                            "Choice": "Nucleic acids",
+                            "ImageLink": "",
+                            "ImageFile": "",
+                            "IsCorrect": false
+                        }
+                    ],
+                    "QuestionNumber": 8
+                },
+                {
+                    "Id": "d876162b-f8dc-cfd4-cdb7-21dda83aa0a4",
+                    "WithSelection": false,
+                    "CompCode": "S10LT-IIc-25",
+                    "Competency": "Describe nucleotide components",
+                    "Content": "Nucleic Acids",
+                    "Taxonomy": "Remembering",
+                    "QuestionType": "Multiple Choice",
+                    "PartType": "Multiple Choice",
+                    "TimeUp": "No",
+                    "VoiceOver": "None",
+                    "VoiceAudio": "",
+                    "SystemVersion": "30.0.6",
+                    "QuestionContent": {
+                        "type": "doc",
+                        "content": [
+                            {
+                                "type": "paragraph",
+                                "attrs": {
+                                    "style": "font-size:12px;"
+                                },
+                                "content": [
+                                    {
+                                        "type": "text",
+                                        "text": "A nucleotide is composed of:"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "Question": "A nucleotide is composed of:",
+                    "Answer": "P0001Q0010O0002",
+                    "UserAnswer": "",
+                    "IsAnswered": "No",
+                    "ImageLink": "",
+                    "ImageFile": "",
+                    "Points": 1,
+                    "Penalty": 0,
+                    "RandomOption": "Yes",
+                    "TimeLimit": 0,
+                    "AdaptiveTime": 20,
+                    "ActivatedReadingTime": true,
+                    "SpeakEarlySubmission": true,
+                    "ShowFeedback": "No",
+                    "FeedbackCorrect": "Correct",
+                    "FeedbackIncorrect": "Incorrect",
+                    "Options": [
+                        {
+                            "Id": "P0001Q0010O0001",
+                            "IdUser": "UserP0001Q0010O0001",
+                            "EquationOpt": "",
+                            "Choice": "Amino acid, glycerol, fatty acids",
+                            "ImageLink": "",
+                            "ImageFile": "",
+                            "IsCorrect": false
+                        },
+                        {
+                            "Id": "P0001Q0010O0002",
+                            "IdUser": "UserP0001Q0010O0002",
+                            "EquationOpt": "",
+                            "Choice": "Sugar, phosphate, nitrogenous base",
+                            "ImageLink": "",
+                            "ImageFile": "",
+                            "IsCorrect": true
+                        },
+                        {
+                            "Id": "P0001Q0010O0003",
+                            "IdUser": "UserP0001Q0010O0003",
+                            "EquationOpt": "",
+                            "Choice": "Sugar, fatty acids, nitrogen",
+                            "ImageLink": "",
+                            "ImageFile": "",
+                            "IsCorrect": false
+                        },
+                        {
+                            "Id": "P0001Q0010O0004",
+                            "IdUser": "UserP0001Q0010O0004",
+                            "EquationOpt": "",
+                            "Choice": "Glycerol, nitrogen base, sugar",
+                            "ImageLink": "",
+                            "ImageFile": "",
+                            "IsCorrect": false
+                        }
+                    ],
+                    "QuestionNumber": 10
+                },
+                {
+                    "Id": "8c78bb33-b1d9-b186-6694-0e697797cc4a",
+                    "WithSelection": false,
+                    "CompCode": "S10MT-IIIf-30",
+                    "Competency": "Identify conditions necessary for combustion",
+                    "Content": "Fire Triangle",
+                    "Taxonomy": "Remembering",
+                    "QuestionType": "Multiple Choice",
+                    "PartType": "Multiple Choice",
+                    "TimeUp": "No",
+                    "VoiceOver": "None",
+                    "VoiceAudio": "",
+                    "SystemVersion": "30.0.6",
+                    "QuestionContent": {
+                        "type": "doc",
+                        "content": [
+                            {
+                                "type": "paragraph",
+                                "attrs": {
+                                    "style": "font-size:12px;"
+                                },
+                                "content": [
+                                    {
+                                        "type": "text",
+                                        "text": "Fire requires which three components?"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "Question": "Fire requires which three components?",
+                    "Answer": "P0001Q0012O0002",
+                    "UserAnswer": "",
+                    "IsAnswered": "No",
+                    "ImageLink": "",
+                    "ImageFile": "",
+                    "Points": 1,
+                    "Penalty": 0,
+                    "RandomOption": "Yes",
+                    "TimeLimit": 0,
+                    "AdaptiveTime": 20,
+                    "ActivatedReadingTime": true,
+                    "SpeakEarlySubmission": true,
+                    "ShowFeedback": "No",
+                    "FeedbackCorrect": "Correct",
+                    "FeedbackIncorrect": "Incorrect",
+                    "Options": [
+                        {
+                            "Id": "P0001Q0012O0001",
+                            "IdUser": "UserP0001Q0012O0001",
+                            "EquationOpt": "",
+                            "Choice": "Color, smell, shape",
+                            "ImageLink": "",
+                            "ImageFile": "",
+                            "IsCorrect": false
+                        },
+                        {
+                            "Id": "P0001Q0012O0002",
+                            "IdUser": "UserP0001Q0012O0002",
+                            "EquationOpt": "",
+                            "Choice": "Fuel, heat, oxygen",
+                            "ImageLink": "",
+                            "ImageFile": "",
+                            "IsCorrect": true
+                        },
+                        {
+                            "Id": "P0001Q0012O0003",
+                            "IdUser": "UserP0001Q0012O0003",
+                            "EquationOpt": "",
+                            "Choice": "Energy, heat, oxygen",
+                            "ImageLink": "",
+                            "ImageFile": "",
+                            "IsCorrect": false
+                        },
+                        {
+                            "Id": "P0001Q0012O0004",
+                            "IdUser": "UserP0001Q0012O0004",
+                            "EquationOpt": "",
+                            "Choice": "Wood, gas, match",
+                            "ImageLink": "",
+                            "ImageFile": "",
+                            "IsCorrect": false
+                        }
+                    ],
+                    "QuestionNumber": 12
+                },
+                {
+                    "Id": "2bcc31d9-630d-0a51-b605-21e1ebeabb2d",
+                    "WithSelection": false,
+                    "CompCode": "S10LT-IIb-24",
+                    "Competency": "Describe biomolecule properties",
+                    "Content": "Lipids",
+                    "Taxonomy": "Understanding",
+                    "QuestionType": "Multiple Choice",
+                    "PartType": "Multiple Choice",
+                    "TimeUp": "No",
+                    "VoiceOver": "None",
+                    "VoiceAudio": "",
+                    "SystemVersion": "30.0.6",
+                    "QuestionContent": {
+                        "type": "doc",
+                        "content": [
+                            {
+                                "type": "paragraph",
+                                "attrs": {
+                                    "style": "font-size:12px;"
+                                },
+                                "content": [
+                                    {
+                                        "type": "text",
+                                        "text": "Oil floats on water because oils are:"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "Question": "Oil floats on water because oils are:",
+                    "Answer": "P0001Q0019O0002",
+                    "UserAnswer": "",
+                    "IsAnswered": "No",
+                    "ImageLink": "",
+                    "ImageFile": "",
+                    "Points": 1,
+                    "Penalty": 0,
+                    "RandomOption": "Yes",
+                    "TimeLimit": 0,
+                    "AdaptiveTime": 20,
+                    "ActivatedReadingTime": true,
+                    "SpeakEarlySubmission": true,
+                    "ShowFeedback": "No",
+                    "FeedbackCorrect": "Correct",
+                    "FeedbackIncorrect": "Incorrect",
+                    "Options": [
+                        {
+                            "Id": "P0001Q0019O0001",
+                            "IdUser": "UserP0001Q0019O0001",
+                            "EquationOpt": "",
+                            "Choice": "Polar",
+                            "ImageLink": "",
+                            "ImageFile": "",
+                            "IsCorrect": false
+                        },
+                        {
+                            "Id": "P0001Q0019O0002",
+                            "IdUser": "UserP0001Q0019O0002",
+                            "EquationOpt": "",
+                            "Choice": "Hydrophobic",
+                            "ImageLink": "",
+                            "ImageFile": "",
+                            "IsCorrect": true
+                        },
+                        {
+                            "Id": "P0001Q0019O0003",
+                            "IdUser": "UserP0001Q0019O0003",
+                            "EquationOpt": "",
+                            "Choice": "Water-soluble",
+                            "ImageLink": "",
+                            "ImageFile": "",
+                            "IsCorrect": false
+                        },
+                        {
+                            "Id": "P0001Q0019O0004",
+                            "IdUser": "UserP0001Q0019O0004",
+                            "EquationOpt": "",
+                            "Choice": "Very dense",
+                            "ImageLink": "",
+                            "ImageFile": "",
+                            "IsCorrect": false
+                        }
+                    ],
+                    "QuestionNumber": 19
+                },
+                {
+                    "Id": "78fa2977-aa1e-5268-bf56-e3f8ec46dbf4",
+                    "WithSelection": false,
+                    "CompCode": "S10MT-IIIa-27",
+                    "Competency": "Describe changes in atoms",
+                    "Content": "Chemical Reactions",
+                    "Taxonomy": "Understanding",
+                    "QuestionType": "Multiple Choice",
+                    "PartType": "Multiple Choice",
+                    "TimeUp": "No",
+                    "VoiceOver": "None",
+                    "VoiceAudio": "",
+                    "SystemVersion": "30.0.6",
+                    "QuestionContent": {
+                        "type": "doc",
+                        "content": [
+                            {
+                                "type": "paragraph",
+                                "attrs": {
+                                    "style": "font-size:12px;"
+                                },
+                                "content": [
+                                    {
+                                        "type": "text",
+                                        "text": "During chemical reactions, atoms:"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "Question": "During chemical reactions, atoms:",
+                    "Answer": "P0001Q0024O0002",
+                    "UserAnswer": "",
+                    "IsAnswered": "No",
+                    "ImageLink": "",
+                    "ImageFile": "",
+                    "Points": 1,
+                    "Penalty": 0,
+                    "RandomOption": "Yes",
+                    "TimeLimit": 0,
+                    "AdaptiveTime": 20,
+                    "ActivatedReadingTime": true,
+                    "SpeakEarlySubmission": true,
+                    "ShowFeedback": "No",
+                    "FeedbackCorrect": "Correct",
+                    "FeedbackIncorrect": "Incorrect",
+                    "Options": [
+                        {
+                            "Id": "P0001Q0024O0001",
+                            "IdUser": "UserP0001Q0024O0001",
+                            "EquationOpt": "",
+                            "Choice": "Are destroyed",
+                            "ImageLink": "",
+                            "ImageFile": "",
+                            "IsCorrect": false
+                        },
+                        {
+                            "Id": "P0001Q0024O0002",
+                            "IdUser": "UserP0001Q0024O0002",
+                            "EquationOpt": "",
+                            "Choice": "Rearrange",
+                            "ImageLink": "",
+                            "ImageFile": "",
+                            "IsCorrect": true
+                        },
+                        {
+                            "Id": "P0001Q0024O0003",
+                            "IdUser": "UserP0001Q0024O0003",
+                            "EquationOpt": "",
+                            "Choice": "Turn to energy",
+                            "ImageLink": "",
+                            "ImageFile": "",
+                            "IsCorrect": false
+                        },
+                        {
+                            "Id": "P0001Q0024O0004",
+                            "IdUser": "UserP0001Q0024O0004",
+                            "EquationOpt": "",
+                            "Choice": "Combine permanently",
+                            "ImageLink": "",
+                            "ImageFile": "",
+                            "IsCorrect": false
+                        }
+                    ],
+                    "QuestionNumber": 24
+                },
+                {
+                    "Id": "bfb5af5d-372d-45e2-03c8-8886a291379e",
+                    "WithSelection": false,
+                    "CompCode": "S10MT-IIIe-29",
+                    "Competency": "Explain reaction rates using collision theory",
+                    "Content": "Factors Affecting Reaction Rate",
+                    "Taxonomy": "Analyzing",
+                    "QuestionType": "Multiple Choice",
+                    "PartType": "Multiple Choice",
+                    "TimeUp": "No",
+                    "VoiceOver": "None",
+                    "VoiceAudio": "",
+                    "SystemVersion": "30.0.6",
+                    "QuestionContent": {
+                        "type": "doc",
+                        "content": [
+                            {
+                                "type": "paragraph",
+                                "attrs": {
+                                    "style": "font-size:12px;"
+                                },
+                                "content": [
+                                    {
+                                        "type": "text",
+                                        "text": "Why does food spoil more slowly inside a refrigerator?"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "Question": "Why does food spoil more slowly inside a refrigerator?",
+                    "Answer": "P0001Q0032O0002",
+                    "UserAnswer": "",
+                    "IsAnswered": "No",
+                    "ImageLink": "",
+                    "ImageFile": "",
+                    "Points": 1,
+                    "Penalty": 0,
+                    "RandomOption": "Yes",
+                    "TimeLimit": 0,
+                    "AdaptiveTime": 20,
+                    "ActivatedReadingTime": true,
+                    "SpeakEarlySubmission": true,
+                    "ShowFeedback": "No",
+                    "FeedbackCorrect": "Correct",
+                    "FeedbackIncorrect": "Incorrect",
+                    "Options": [
+                        {
+                            "Id": "P0001Q0032O0001",
+                            "IdUser": "UserP0001Q0032O0001",
+                            "EquationOpt": "",
+                            "Choice": "Higher activation energy",
+                            "ImageLink": "",
+                            "ImageFile": "",
+                            "IsCorrect": false
+                        },
+                        {
+                            "Id": "P0001Q0032O0002",
+                            "IdUser": "UserP0001Q0032O0002",
+                            "EquationOpt": "",
+                            "Choice": "Lower kinetic energy, fewer particles reach activation energy",
+                            "ImageLink": "",
+                            "ImageFile": "",
+                            "IsCorrect": true
+                        },
+                        {
+                            "Id": "P0001Q0032O0003",
+                            "IdUser": "UserP0001Q0032O0003",
+                            "EquationOpt": "",
+                            "Choice": "Bacteria removed",
+                            "ImageLink": "",
+                            "ImageFile": "",
+                            "IsCorrect": false
+                        },
+                        {
+                            "Id": "P0001Q0032O0004",
+                            "IdUser": "UserP0001Q0032O0004",
+                            "EquationOpt": "",
+                            "Choice": "Food chemically changed",
+                            "ImageLink": "",
+                            "ImageFile": "",
+                            "IsCorrect": false
+                        }
+                    ],
+                    "QuestionNumber": 32
+                },
+                {
+                    "Id": "Q69d4c4d2ee59d",
+                    "WithSelection": false,
+                    "QuestionType": "Multiple Choice",
+                    "PartType": "Multiple Choice",
+                    "Question": "what is an orange",
+                    "Answer": "P0001Q69d4c4d2ee59dO0004",
+                    "Options": [
+                        {
+                            "Id": "P0001Q69d4c4d2ee59dO0001",
+                            "Choice": "color",
+                            "IsCorrect": false
+                        },
+                        {
+                            "Id": "P0001Q69d4c4d2ee59dO0002",
+                            "Choice": "plant",
+                            "IsCorrect": false
+                        },
+                        {
+                            "Id": "P0001Q69d4c4d2ee59dO0003",
+                            "Choice": "fruit",
+                            "IsCorrect": false
+                        },
+                        {
+                            "Id": "P0001Q69d4c4d2ee59dO0004",
+                            "Choice": "all of the above",
+                            "IsCorrect": true
+                        }
+                    ]
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
